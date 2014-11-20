@@ -11,7 +11,8 @@ You can construct a stand-alone node just for testing.
 It should work as a monitoring target node, a log parsing node, and a log search node.
 
 To do it, apply all steps to setup each node to a server, except `/etc/td-agent/td-agent.conf`.
-Instead, you should use the file `stand-alone/td-agent.conf` in this repository.
+Instead, you should use the file `centos/stand-alone/td-agent.conf` in this repository.
+(If you are going to use an Ubuntu server, use `ubuntu/stand-alone/td-agent.conf` instead.)
 
 ## How to construct nodes with Ubuntu server
 
@@ -113,7 +114,39 @@ Configure Fluentd:
 
 You have to use `/var/log/syslog` instead of `/var/log/messages` on Ubuntu.
 
-Create `/etc/td-agent/td-agent.conf`: same to CentOS
+Create `/etc/td-agent/td-agent.conf`:
+
+~~~
+<source>
+  type config_expander
+  <config>
+    type tail
+    path /var/log/syslog
+    pos_file /var/log/td-agent/messages.pos
+    tag raw.messages.log.${hostname}
+    format none
+  </config>
+</source>
+
+<match raw.*.log.**>
+  type secure_forward
+  shared_key fluentd-secret
+  self_hostname node1.example.com
+  <server>
+    host parser1.example.com
+  </server>
+  <server>
+    host parser2.example.com
+  </server>
+
+  buffer_type file
+  buffer_path /var/spool/td-agent/buffer/secure-forward
+  flush_interval 1
+</match>
+~~~
+
+The path to the log file is `/var/log/syslog`, not `/var/log/messages`.
+All other configurations are same to CentOS.
 
 Start Fluentd: same to CentOS
 
