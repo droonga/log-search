@@ -20,6 +20,11 @@ Steps to try the log-search system:
  2. Run `logger (message)` like `logger foobar` on your terminal console.
  3. Reload the admin page. Then you'll see a new `Logs` table automatically created by log-search system.
 
+## How to configure log-search system to work with Droonga
+
+Use `droonga-engine` and `droonga-http-server` instead of `groonga`.
+Then the log-search system automatically uses the Droonga cluster as its backend.
+
 ## How to construct nodes with Ubuntu server
 
 Descriptions in the page above is written for CentOS servers.
