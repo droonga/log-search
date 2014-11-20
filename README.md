@@ -25,6 +25,16 @@ Steps to try the log-search system:
 Use `droonga-engine` and `droonga-http-server` instead of `groonga`.
 Then the log-search system automatically uses the Droonga cluster as its backend.
 
+To configure `droonga-http-server` for the log-search system, use `10041` as the port, specify the path to the `droonga-admin` directory as the document root, and disable the response cache.
+For example:
+
+~~~
+% sudo droonga-http-server-configure \
+         --port 10041 \
+         --document-root /usr/share/groonga/html/groonga-admin \
+         --cache-size 0
+~~~
+
 ## How to construct nodes with Ubuntu server
 
 Descriptions in the page above is written for CentOS servers.
