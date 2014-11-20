@@ -7,12 +7,18 @@ See also: https://github.com/project-hatohol/hatohol/wiki/Log-search
 
 ## How to construct a stand-alone node
 
-You can construct a stand-alone node just for testing.
+You can construct a stand-alone node just for experiments.
 It should work as a monitoring target node, a log parsing node, and a log search node.
 
 To do it, apply all steps to setup each node to a server, except `/etc/td-agent/td-agent.conf`.
 Instead, you should use the file `centos/stand-alone/td-agent.conf` in this repository.
 (If you are going to use an Ubuntu server, use `ubuntu/stand-alone/td-agent.conf` instead.)
+
+Steps to try the log-search system:
+
+ 1. Go to the [Groonga's admin page](http://localhost:10041/)
+ 2. Run `logger (message)` like `logger foobar` on your terminal console.
+ 3. Reload the admin page. Then you'll see a new `Logs` table automatically created by log-search system.
 
 ## How to construct nodes with Ubuntu server
 
