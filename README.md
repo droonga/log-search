@@ -5,6 +5,14 @@ Example configurations and others to construct log-search system based on a Droo
 
 See also: https://github.com/project-hatohol/hatohol/wiki/Log-search
 
+## Construction a stand-alone node
+
+You can construct a stand-alone node just for testing.
+It should work as a monitoring target node, a log parsing node, and a log search node.
+
+To do it, apply all steps to setup each node to a server, except `/etc/td-agent/td-agent.conf`.
+Instead, you should use the file `stand-alone/td-agent.conf` in this repository.
+
 ## Construction nodes with Ubuntu server
 
 Descriptions in the page above is written for CentOS servers.
@@ -107,4 +115,5 @@ You have to use `/var/log/syslog` instead of `/var/log/messages` on Ubuntu.
 
 Create `/etc/td-agent/td-agent.conf`: same to CentOS
 
+Start Fluentd: same to CentOS
 
