@@ -9,10 +9,12 @@ See also: https://github.com/project-hatohol/hatohol/wiki/Log-search
 
 You can construct a stand-alone node just for experiments.
 It should work as a monitoring target node, a log parsing node, and a log search node.
+If you are using Ubuntu Trusty:
 
-To do it, apply all steps to setup each node to a server, except `/etc/td-agent/td-agent.conf`.
+    $ curl "https://raw.githubusercontent.com/droonga/log-search/master/ubuntu/install.sh" | sudo bash
+
+Otherwise (if you are using CentOS) apply all steps to setup each node to a server, except `/etc/td-agent/td-agent.conf`.
 Instead, you should use the file `centos/stand-alone/td-agent.conf` in this repository.
-(If you are going to use an Ubuntu server, use `ubuntu/stand-alone/td-agent.conf` instead.)
 
 Steps to try the log-search system:
 
