@@ -67,8 +67,8 @@ Find it from [the list of available scripts](http://docs.fluentd.org/ja/articles
 Install the following Fluentd plugins:
 
 ~~~
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-secure-forward
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-groonga
+% sudo td-agent-gem install fluent-plugin-secure-forward
+% sudo td-agent-gem install fluent-plugin-groonga
 ~~~
 
 The path to the `gem` command is different from the one on CentOS server.
@@ -104,10 +104,10 @@ Install Groonga:
 Install the following Fluentd plugins:
 
 ~~~
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-secure-forward
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-forest
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-parser
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-record-reformer
+% sudo td-agent-gem install fluent-plugin-secure-forward
+% sudo td-agent-gem install fluent-plugin-forest
+% sudo td-agent-gem install fluent-plugin-parser
+% sudo td-agent-gem install fluent-plugin-record-reformer
 ~~~
 
 Configure Fluentd: same to CentOS
@@ -122,8 +122,8 @@ Start Fluentd: same to CentOS
 Install the following Fluentd plugins:
 
 ~~~
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-secure-forward
-% sudo /opt/td-agent/embedded/bin/gem install fluent-plugin-config-expander
+% sudo td-agent-gem install fluent-plugin-secure-forward
+% sudo td-agent-gem install fluent-plugin-config-expander
 ~~~
 
 Configure Fluentd:
