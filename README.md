@@ -154,7 +154,7 @@ Create `/etc/td-agent/td-agent.conf`:
 <match raw.*.log.**>
   type secure_forward
   shared_key fluentd-secret
-  self_hostname node1.example.com
+  self_hostname "#{Socket.gethostname}"
   <server>
     host parser1.example.com
   </server>
