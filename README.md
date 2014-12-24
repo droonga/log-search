@@ -22,6 +22,12 @@ Steps to try the log-search system:
  2. Run `logger (message)` like `logger foobar` on your terminal console.
  3. Reload the admin page. Then you'll see a new `Logs` table automatically created by log-search system.
 
+Or, you can see raw result with HTTP request like:
+
+    $ curl "http://localhost:10041/d/select?table=Logs&limit=5&sortby=-timestamp&_=$(date +%s)"
+
+You should specify an extra parameter to bypass response cache, if it is a Droonga cluster instead of a Groonga HTTP server.
+
 ## How to configure log-search system to work with Droonga
 
 Use `droonga-engine` and `droonga-http-server` instead of `groonga`.
